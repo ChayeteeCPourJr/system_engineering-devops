@@ -1,21 +1,6 @@
 #!/usr/bin/env bash
-# This script displays the content of the current directory,
-# showing only the part of the name after the first dash, one item per line.
+# This script lists the part of filenames after the first dash using a for loop
 
-# Iterate through each file and directory in the current directory.
-# The 'ls' command without '-a' or '-A' options will not display hidden files.
-for item in *; do
-  # Check if the item is a file or directory that is not hidden.
-  # This check helps to avoid issues if there are no non-hidden files,
-  # as '*' might expand to the literal '*' if no matches are found,
-  # or to handle cases where the glob might pick up something unexpected.
-  # However, the primary requirement is to not display hidden files,
-  # which 'for item in *' already handles.
-  # The example output suggests that directories should also be processed.
-
-  # Extract the part of the name after the first dash.
-  # "${item#*-}" removes the shortest match of '*-' from the beginning of the string.
-  # If there is no dash, the entire filename will be displayed.
-  # This matches the example behavior where 'fizzbuzz' is displayed as 'fizzbuzz'.
-  echo "${item#*-}"
+for file in *-*; do
+  echo "${file#*-}"
 done
