@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 # This script is displaying "Best School" 10 times
 
+# Use a for loop to iterate 10 times.
+# The sequence {1..10} generates numbers from 1 to 10.
 for i in {1..10}
 do
+  # Print the phrase "Best School" in each iteration.
   echo "Best School"
 done
